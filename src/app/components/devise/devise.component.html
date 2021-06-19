@@ -1,0 +1,58 @@
+
+<div class="section section-nucleo-icons" style="background-color:rgb(155, 151, 151)">
+    <div class="container" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <h4 class="title" >CONVERT CURRENCY</h4><br />
+                <div class="row">
+                    <div class="col-lg-4 col-md-12"> 
+                        <label for="typeahead-focus" style="color: rgb(61, 57, 57);"><b>Choose currency:</b></label>
+                        <input id="typeahead-focus" type="text" class="form-control" [(ngModel)]="model"
+                            [ngbTypeahead]="search" (focus)="focus$.next($any($event).target.value)"
+                            (click)="click$.next($any($event).target.value)" #instance="ngbTypeahead" />
+                        <br>
+                       
+                        
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+    
+                        <label for="typeahead-focus" style="color: rgb(61, 57, 57);"><b>Amount:</b></label>
+                        <input id="typeahead-focus" type="text" class="form-control"/>
+                        <br> 
+                       
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <label for="typeahead-focus"style="color: rgb(61, 57, 57);"><b>Choose currency:</b></label>
+                        <input id="typeahead-focus" type="text" class="form-control" [(ngModel)]="model2"
+                            [ngbTypeahead]="search2" (focus)="focus2$.next($any($event).target.value)"
+                            (click)="click2$.next($any($event).target.value)" #instance2="ngbTypeahead" />
+                        <br>
+                        
+                      
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <h2 class="title"></h2><br />
+                <div class="row"> 
+                    <div class="col-lg-6 col-md-12">
+                        <a class="btn btn-danger btn-round" style="margin-top: 30px;" (click)="convert()"> Convert </a>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <label for="typeahead-focus" style="color: rgb(61, 57, 57);" ><b>Result:</b></label>
+                     {{result}} 
+                        <br><hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+        <div id="barChart" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+</div>
+
+
+
+
+                

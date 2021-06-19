@@ -1,0 +1,22 @@
+<div class="bg">
+    <div class="wrapper">
+        <div class="card text-center" *ngFor="let m of list| slice: (page-1) * pageSize : page * pageSize ">
+            <div class="image"> <img src="{{m.logo}}" width="300">  </div>
+           
+           <div class="about-product text-center">
+                <h3 [(ngModel)]="nom">{{m.nom}}</h3>
+                <h4>$99.<small>99</small></h4> 
+                <button class="btn btn-success buy-now" 
+                [routerLink]="['/details']" routerLinkActive="router-link-active" 
+                (click)="detail()" >More details
+            </button>
+            </div>
+        </div>  
+        
+    </div>
+    <ngb-pagination class="d-flex justify-content-center"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      [collectionSize]="list.length"></ngb-pagination>
+
+     

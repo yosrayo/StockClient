@@ -1,0 +1,21 @@
+<body style="background-color: #B8B8B8;">
+<div class="login-reg-panel" style="margin-top: 50px;" >
+	<div class="register-info-box"  >
+			<h2>Don't have an account?</h2>
+			<p>Lorem ipsum dolor sit amet</p>
+			<button id="label-login" for="log-login-show" [routerLink]="['/register']" routerLinkActive="router-link-active"  >Register</button>
+			<input type="radio" name="active-log-panel" id="log-login-show">
+		</div>
+		<div class="white-panel" >
+			<div class="login-show"  >
+				<h2>LOGIN</h2>
+				<input type="text" placeholder="Email"[(ngModel)]="user.email" name="email"  #email="ngModel">
+				<input type="password" placeholder="Password" [(ngModel)]="user.password" name="password"  #mdp="ngModel">
+				<input type="button" value="Login" (click)="connexion()"  id="label-login" style="margin-left: 100px; border-radius: 10px;">
+				<a href="" style="margin-left: 100px;">Forgot password?</a>
+			</div>
+			
+		</div>
+	
+	</div>
+</body>

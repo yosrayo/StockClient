@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" ><img src="assets\img\full_logo.png" style="height: 50px; width: 170px;"></a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="login()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" >
+                    <a class="nav-link"  data-placement="bottom" target="_blank" [routerLink]="['/home']" routerLinkActive="router-link-active" >
+                     HOME
+                    </a>
+                </li>
+            
+                <li class="nav-item" ngbDropdown >
+                    <a class="nav-link"  data-placement="bottom"  target="_blank" id="dropdownBasic1" ngbDropdownToggle>
+                    COMPANIES
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>Google</button>
+                        <button ngbDropdownItem>Microsoft</button>
+                        <button ngbDropdownItem>Apple</button>
+                        <button ngbDropdownItem>Facebook</button>
+                        <button ngbDropdownItem>3M</button>
+                        <button ngbDropdownItem>Amazon</button>
+                      </div>
+                    </a>
+                 
+                  
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link"  data-placement="bottom"  target="_blank" [routerLink]="['/aboutUs']" routerLinkActive="router-link-active" >
+                        ABOUT US
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link"  data-placement="bottom"  target="_blank" [routerLink]="['/contactUs']" routerLinkActive="router-link-active" >
+                        CONTACT US
+                    </a>
+                </li>
+                
+                <li class="nav-item" >
+                    <a  target="_blank" [routerLink]="['/login']" class="btn btn-danger btn-round" *ngIf="!c()">Sign Up/ Sign In</a>
+                    <a target="_blank"   class="btn btn-danger btn-round" (click)="logout()"  *ngIf="c()">Logout</a>
+                </li>
+              
+              
+            </ul>
+        </div>
+    </div>
+</nav>

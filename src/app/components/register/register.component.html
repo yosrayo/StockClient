@@ -1,0 +1,48 @@
+<body style="background-color: #B8B8B8;">
+    <div class="login-reg-panel" style="margin-top: 50px;">
+        <div class="login-info-box">
+            <h2>Have an account?</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+            <button id="label-register" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</button>
+            <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
+        </div>
+
+
+    </div>
+    <div class="white-panel" id="d" style="margin-top: 190px; ">
+        <form class="register-show">
+            <h2>REGISTER</h2>
+            <div class="form-group" >
+                <input type="text" placeholder="Fisrt name" style="height: 40px;" required
+                    [(ngModel)]="firstName">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Last name" style="height: 40px;" required
+                    [(ngModel)]="lastName">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Email" style="height: 40px;" required
+                    [(ngModel)]="email">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" style="height: 40px;" required
+                    [(ngModel)]="password">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Confirm Password" style="height: 35px;" required
+                    [(ngModel)]="password">
+            </div>
+            <button type="submit" id="label-register" (click)="registerUser()" 
+            style=" border:1px solid #9E9E9E;
+            padding:5px 5px;
+            width:150px;
+            display:block;
+            text-align:center;
+            border-radius:5px;
+            cursor:pointer;
+            font-weight: 600;
+            font-size: 18px;">Register</button>
+        </form>
+    </div>
+
+</body>
