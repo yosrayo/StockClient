@@ -27,7 +27,7 @@ export class SocieteService {
       return of(result as T);
     };
   }
-  private SocietesUrl = 'http://localhost:8083/api';
+  private SocietesUrl = 'http://localhost:8094/api';
   constructor(private http: HttpClient) { }
   getSocietes (): Observable<Societe[]> {
     return this.http.get<Societe[]>(this.SocietesUrl +'/s').pipe(
