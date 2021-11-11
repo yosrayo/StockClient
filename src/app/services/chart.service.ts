@@ -3,7 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { BehaviorSubject, from, Subject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'environments/environment';
-import { Chart } from '../classes/chart';
+
 
 
 @Injectable({
@@ -20,9 +20,9 @@ export class ChartService {
      
  
  //Evolution
- EvolutionDevise(symbol: String){
+ EvolutionD(symbol: String){
   return new Promise((resolve, reject) => {
-    this.http.get(environment.rglobal +'evolution?symbol=' +symbol).subscribe(
+    this.http.get(environment.rglobal +'/predict?symbol=' +symbol).subscribe(
       (response) => {
         resolve(response);
       
@@ -36,9 +36,9 @@ export class ChartService {
 
 //convert Devise
 
- ConvertDevise(currency_base: String ,currency_to:String ){
+ ConvertDevise(currency_base: String ,currency_to:String , quantity: number){
   return new Promise((resolve, reject) => {
-    this.http.get(environment.rglobal +'/convert?currency_base='+currency_base+'&currency_to='+currency_to+'&quantity=0').subscribe(
+    this.http.get(environment.rglobal +'/convert?currency_base='+currency_base+'&currency_to='+currency_to+'&quantity='+quantity).subscribe(
       (response) => {
         resolve(response);
         

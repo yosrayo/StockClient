@@ -235,3 +235,4 @@ Instagram: <https://instagram.com/creativetimofficial>
 [LICENSE]: ./LICENSE.md
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 "# ProjetStock" 
+"# StockClient" 

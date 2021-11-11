@@ -10,6 +10,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { DeviseComponent } from './components/devise/devise.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { UserGuard } from './guards/user.guard';
 
 
 
@@ -19,8 +20,8 @@ const routes: Routes =[
     { path: 'home',             component: ComponentsComponent },
     { path: 'register',           component: RegisterComponent },
     { path: 'login',           component: LoginComponent },
-    { path: 'details',           component: DetailsComponent },
-    { path: 'devise',           component: DeviseComponent },
+    { path: 'details',           component: DetailsComponent ,canActivate: [UserGuard]},
+    { path: 'devise',           component: DeviseComponent ,canActivate: [UserGuard] },
     { path: 'contactUs',           component: ContactUsComponent },
     { path: 'aboutUs',           component: AboutUsComponent },
 

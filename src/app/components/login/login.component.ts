@@ -9,8 +9,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-login: string;
-loginForm: FormGroup;
+  loginForm: FormGroup;
   ReactiveFormModul
   submitted = false;
   user: User;
@@ -21,15 +20,17 @@ loginForm: FormGroup;
   list:User[];
   gr=false;
   constructor(private router: Router  ,private userService:UserService) { }
+ 
 
-  ngOnInit(): void {
+  ngOnInit() {
+  
     this.userService .getUsers().subscribe((res) => {
       this.list = res;
     });
     this.user= new User();
     this.getUsers();
-    
   }
+  
   getUsers()
   {
     this.userService.getUsers().subscribe(users => this.users = users);
@@ -52,29 +53,13 @@ for(let us of this.users)
  { 
 this.b=true;
 this.h = us ;
-
-localStorage.setItem("nom",JSON.stringify(this.h.role));
-
+localStorage.setItem("role",JSON.stringify(this.h.role));
+localStorage.setItem("name","name");
+window.location.replace("home") 
 
  }
-
 }
-    if((!this.b)||(JSON.parse(localStorage.getItem('role'))!='user'))
-    {
-      alert("compte non reconnu!");
-      window.location.replace("login")
-    }
- 
-    else {
-      if(JSON.parse(localStorage.getItem('role'))=='user')
-    {
-   window.location.replace("home") 
-
-
-  }
-
-    }
-  }
+}
 
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { SocieteService } from 'app/services/societe.service';
 
 @Component({
     selector: 'app-navbar',
@@ -10,7 +11,8 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
     sign: string;
-    constructor(public location: Location, private element : ElementRef) {
+    list = {} as any ;
+    constructor(public location: Location, private element : ElementRef,private societeService:SocieteService) {
         this.sidebarVisible = false;
     }
 
@@ -18,6 +20,12 @@ export class NavbarComponent implements OnInit {
       
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+
+        this.societeService .getSocietes().subscribe((res) => {
+            this.list = res;
+            console.log("societe",this.list);
+            
+          });
     }
     sidebarOpen() {
         const toggleButton = this.toggleButton;
@@ -49,11 +57,7 @@ export class NavbarComponent implements OnInit {
         }
     };
     
-    login() {
-        localStorage.setItem("login","login");
-        window.location.replace("login");
-        localStorage.removeItem("sign");
-      }
+   
       c() {
         if(localStorage.getItem('name') === '') {
           return false;
@@ -64,10 +68,17 @@ export class NavbarComponent implements OnInit {
       //llogout
       logout() {
         window.location.replace("login");
-        localStorage.setItem("name","");;
-        localStorage.removeItem("id");
-        
+        localStorage.setItem("name","");
+        localStorage.removeItem("role");
+       
       }
-    
+      rec(m){
+       localStorage.setItem("symboleSoci",m.symbole);
+       localStorage.setItem("nom",m.nom);
+       localStorage.setItem("logo",m.logo);
+       localStorage.setItem("symbole",m.symbole);
+       window.location.replace("#/details");
+       location.reload();
+      }
     
 }

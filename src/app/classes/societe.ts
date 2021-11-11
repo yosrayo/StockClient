@@ -1,7 +1,7 @@
 export class Societe {
-    id:number;
-    bourse: number ;
-    symbole: string;
-    currency: number;
+    idd:string;
     nom: string;
+    logo: string ;
+    symbole: string;
+    
 }

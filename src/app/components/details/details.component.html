@@ -1,54 +1,46 @@
-
-<div class="section  section-nucleo-icons"style="background-color:rgb(155, 151, 151)">
+<div class="section  section-nucleo-icons" style="background-color:rgb(155, 151, 151)">
     <div class="container">
-
-
         <div class="row">
             <div class="col-lg-3 col-md-12">
-                <div class="wrapper"  style="height: 5000px; margin-top: 50px; ">
-                    <div class="card text-center "  style="background-color: transparent;">
-                        <div class="image"> <img src="assets\img\PngItem_5730265.png" width="100"   > </div>
-                       
+                <div class="wrapper" style="height: 5000px; margin-top: 50px; ">
+                    <div class="card text-center " style="background-color: gray; border-color: #f5593d;">
+                        <div class="image"> <img src="{{logo}}" width="100"> </div>
+
                         <div class="about-product text-center">
-                            <h3 style="color: gray;">Apple</h3>
-                            <h4><b>Symbol</b>|<small style="color: black;" >APPL</small></h4> 
-                             
-                            
+                            <h3 style="color: #f5593d;">{{nom}}</h3>
+                            <h4><b>{{symbole}}</b>|<small style="color: black;">{{nom}}</small></h4>
+                            <div class="text-center">
+                                <a class="btn btn-danger btn-round"
+                                    style="margin-bottom: 25px; background-color: rgb(61, 60, 60);"
+                                    (click)="prediction()"> Show chart </a>
+                            </div>
+
                         </div>
-                    </div>  
-                    
-                </div>  
+                    </div>
+
+                </div>
             </div>
             <div class="col-lg-9 col-md-12">
-               
-                <p class="description">
-
-                </p><br />
-
-                <div id="barChart" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-
-                
+                <div id="barChart" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+                </div>
+                <table class="table table-striped" style="margin-top: 10px;">
+                    <thead>
+                      <tr>
+                        <th scope="col">Future date</th>
+                        <th scope="col">Future price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let m of new " >
+                        <th scope="row">{{m.dateTime}}</th>
+                        <td> {{m.pridiction}}</td>
+                      </tr>
+                   
+                    </tbody>
+                  </table>
             </div>
-
+        </div>
         
-        </div>
     </div>
-
-</div>
-<div class="section section-dark">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 ml-auto mr-auto text-center">
-                <h2 class="title">Completed with examples</h2>
-                <p class="description">The kit comes with three pre-built pages to help you get started faster. You can
-                    change the text and images and you're good to go. More importantly, looking at them will give you a
-                    picture of what you can built with this powerful kit.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="section section-dark">
-
+  
 </div>

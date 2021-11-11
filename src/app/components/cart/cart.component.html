@@ -1,15 +1,18 @@
-<div class="bg">
-    <div class="wrapper">
+<div class="bg" style="background-image: url('../assets/img/antoine-barres.png');
+background-position: center center;
+background-size: cover;
+background-attachment: fixed;
+margin-top: 0;">
+    <div class="wrapper" >
         <div class="card text-center" *ngFor="let m of list| slice: (page-1) * pageSize : page * pageSize ">
             <div class="image"> <img src="{{m.logo}}" width="300">  </div>
            
            <div class="about-product text-center">
                 <h3 [(ngModel)]="nom">{{m.nom}}</h3>
-                <h4>$99.<small>99</small></h4> 
+                <h4>{{m.symbole}}</h4> 
                 <button class="btn btn-success buy-now" 
-                [routerLink]="['/details']" routerLinkActive="router-link-active" 
-                (click)="detail()" >More details
-            </button>
+               (click)="detail(m)"> More details</button>
+           
             </div>
         </div>  
         
@@ -17,6 +20,6 @@
     <ngb-pagination class="d-flex justify-content-center"
       [(page)]="page"
       [pageSize]="pageSize"
-      [collectionSize]="list.length"></ngb-pagination>
+      [collectionSize]="list.length" style="color: #ce7e2a;"></ngb-pagination>
 
      

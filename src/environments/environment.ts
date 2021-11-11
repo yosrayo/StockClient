@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  rglobal: "http://205c629d463c.ngrok.io"
+  rglobal: "http://640b7dcf53a5.ngrok.io"
 };

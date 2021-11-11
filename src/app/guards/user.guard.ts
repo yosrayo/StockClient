@@ -19,7 +19,7 @@ export class UserGuard implements CanActivate {
             // this will be passed from the route config
             // on the data property
 
-            if (JSON.parse(localStorage.getItem('grade')) == 'user') {
+            if (JSON.parse(localStorage.getItem("role")) === "user") {
               return true;
             } else {
               this.router.navigate(['/login']);

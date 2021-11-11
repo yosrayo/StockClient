@@ -19,17 +19,17 @@
                 <li class="nav-item" ngbDropdown >
                     <a class="nav-link"  data-placement="bottom"  target="_blank" id="dropdownBasic1" ngbDropdownToggle>
                     COMPANIES
-                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem>Google</button>
-                        <button ngbDropdownItem>Microsoft</button>
-                        <button ngbDropdownItem>Apple</button>
-                        <button ngbDropdownItem>Facebook</button>
-                        <button ngbDropdownItem>3M</button>
-                        <button ngbDropdownItem>Amazon</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+                        <button ngbDropdownItem *ngFor="let m of list" (click)="rec(m)">{{m.nom}}</button>
+    
                       </div>
                     </a>
-                 
-                  
+                </li>
+
+                <li class="nav-item" >
+                    <a class="nav-link"  data-placement="bottom"  target="_blank" [routerLink]="['/devise']" routerLinkActive="router-link-active" >
+                        Convert currency
+                    </a>
                 </li>
                 <li class="nav-item" >
                     <a class="nav-link"  data-placement="bottom"  target="_blank" [routerLink]="['/aboutUs']" routerLinkActive="router-link-active" >

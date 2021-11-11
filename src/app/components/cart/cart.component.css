@@ -1,5 +1,5 @@
 body {
-    background-color: #f5593d
+    background-color: #270a05
 }
 
 .wrapper {
@@ -29,7 +29,7 @@ body {
     height: 100%;
     content: "";
     top: -50%;
-    background-color: #f5593d;
+    background-color: #ce7e2a;
     transform: skewY(345deg);
     transition: 2s ease-in
 }
@@ -71,8 +71,8 @@ body {
 
 .buy-now {
     color: #fff;
-    background-color: #f56a68 !important;
-    border-color: #ef5350 !important;
+    background-color: #ce7e2a !important;
+    border-color: #ce7e2a !important;
     width: 160px;
     margin-top: 20px
 }
@@ -83,8 +83,8 @@ body {
 
 .buy-now:hover {
     color: #fff;
-    background-color: #e84040 !important;
-    border-color: #e84040 !important
+    background-color: #ce7e2a !important;
+    border-color: #ce7e2a !important
 }
 .bg{
     background-color: rgba(3, 3, 3, 0.561);
@@ -134,7 +134,7 @@ body {
 }
 [data-pagination] a:focus,
 [data-pagination] a:hover {
-  color: #f60;
+  color: #ce7e2a;
 }
 [data-pagination] li.current {
   background: rgba(0,0,0,.1)
@@ -211,7 +211,7 @@ body {
 }
 [data-pagination] a:focus,
 [data-pagination] a:hover {
-  color: #f60;
+  color: #ce7e2a;
 }
 [data-pagination] li.current {
   background: rgba(0,0,0,.1)
